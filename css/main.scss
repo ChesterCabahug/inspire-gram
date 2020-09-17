@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --primary: #28df99;
+    --secondary: #edffe7;
+    --font-dark: #292929;
+    --font-not-so-dark: #818181;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-dark);
+}
+
+body {
+    position: relative;
+}
+
+.overlay-container {
+    .overlay-top {
+        position: fixed;
+        background: linear-gradient(
+            180deg,
+            #ffffff 53.65%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        width: 100vw;
+        top: 0;
+        height: 14rem;
+
+        @media (max-width: 750px) {
+            height: 13rem;
+        }
+    }
+
+    .overlay-bottom {
+        transform: rotate(-180deg);
+        bottom: 0;
+        position: fixed;
+        width: 100vw;
+        height: 14rem;
+
+        background: linear-gradient(
+            180deg,
+            #ffffff 53.65%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        @media (max-width: 750px) {
+            height: 13rem;
+        }
+    }
+}
+
+header {
+    nav {
+        h1 {
+            position: fixed;
+            z-index: 10;
+            font-family: "Pacifico", cursive;
+            color: var(--primary);
+            font-size: 2rem;
+            top: 40vh;
+            left: 10vw;
+            @media (max-width: 750px) {
+                top: 0;
+                left: 0;
+                right: 0;
+                text-align: center;
+                padding: 2.56rem;
+            }
+        }
+    }
+}
+
+main {
+    .quote {
+        margin: 1rem;
+        margin-left: 40vw;
+        margin-right: 30vw;
+
+        padding: 2rem;
+
+        box-shadow: 2px 4px 10px rgba(14, 10, 10, 0.25);
+        background-color: white;
+
+        border-radius: 0.5rem;
+
+        max-width: 30rem;
+
+        @media (max-width: 750px) {
+            margin: 2rem 2.3rem;
+        }
+
+        .text {
+            p {
+                font-family: "Roboto";
+                font-weight: 700;
+                font-size: 2rem;
+                line-height: 2rem;
+            }
+        }
+        .author-like {
+            display: flex;
+            // flex-direction: column;
+            // background-color: rgb(88, 124, 160);
+            margin-top: 2.19rem;
+            justify-content: space-between;
+            p {
+                font-family: 'Roboto', sans-serif;
+                font-style: italic;
+                color: var(--font-not-so-dark);
+                align-self: center;
+                font-size: 1.5rem;
+                max-width: 100%;
+            }
+            .like-container {
+                height: 3rem;
+                width: 3rem;
+                background-color: var(--secondary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+footer {
+    nav {
+        position: fixed;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        top: 50vh;
+
+        @media (max-width: 750px) {
+            top: 90vh;
+            bottom: 0;
+            left: 1rem;
+            right: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .home {
+            display: flex;
+            padding: 0.68rem 1.5rem;
+            padding-left: 12vw;
+
+            @media (max-width: 750px) {
+                padding: 0.68rem 1.5rem;
+            }
+            background: var(--secondary);
+            border-radius: 0.5rem;
+
+            &-isSelected {
+                background: var(--secondary);
+                color: var(--primary);
+            }
+
+            .nav-icon {
+                align-self: center;
+                margin-right: 0.65rem;
+            }
+            .nav-title {
+                align-self: center;
+                text-transform: uppercase;
+            }
+        }
+
+        .likes {
+            display: flex;
+            padding: 0.68rem 1.5rem;
+            padding-left: 12vw;
+            @media (max-width: 750px) {
+                padding: 0.68rem 1.5rem;
+            }
+
+            &-isSelected {
+                background: var(--secondary);
+            }
+
+            .nav-icon {
+                align-self: center;
+                margin-right: 0.65rem;
+            }
+            .nav-title {
+                align-self: center;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
