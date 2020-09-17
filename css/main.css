@@ -25,6 +25,7 @@ body {
   width: 100vw;
   top: 0;
   height: 14rem;
+  z-index: 9;
 }
 
 @media (max-width: 750px) {
@@ -39,6 +40,7 @@ body {
   bottom: 0;
   position: fixed;
   width: 100vw;
+  z-index: 9;
   height: 14rem;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(53.65%, #ffffff), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(180deg, #ffffff 53.65%, rgba(255, 255, 255, 0) 100%);
@@ -106,7 +108,7 @@ main .quote .author-like {
 }
 
 main .quote .author-like p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   color: var(--font-not-so-dark);
   -ms-flex-item-align: center;
@@ -129,8 +131,26 @@ main .quote .author-like .like-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
   border-radius: 20rem;
   cursor: pointer;
+}
+
+main .quote .author-like .like-container .like {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: url(../img/heart.png) no-repeat;
+}
+
+main .quote .author-like .like-container .like-blast {
+  background-position: -2800px 0;
+  -webkit-transition: background 1s steps(28);
+  transition: background 1s steps(28);
 }
 
 footer nav {

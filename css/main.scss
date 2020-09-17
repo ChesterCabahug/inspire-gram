@@ -28,6 +28,7 @@ body {
         width: 100vw;
         top: 0;
         height: 14rem;
+        z-index: 9;
 
         @media (max-width: 750px) {
             height: 13rem;
@@ -39,6 +40,7 @@ body {
         bottom: 0;
         position: fixed;
         width: 100vw;
+        z-index: 9;
         height: 14rem;
 
         background: linear-gradient(
@@ -107,7 +109,7 @@ main {
             margin-top: 2.19rem;
             justify-content: space-between;
             p {
-                font-family: 'Roboto', sans-serif;
+                font-family: "Roboto", sans-serif;
                 font-style: italic;
                 color: var(--font-not-so-dark);
                 align-self: center;
@@ -121,8 +123,23 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                position: relative;
                 border-radius: 20rem;
                 cursor: pointer;
+                .like {
+                    width: 100px;
+                    height: 100px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    background: url(../img/heart.png) no-repeat;
+                }
+
+                .like-blast {
+                    background-position: -2800px 0;
+                    transition: background 1s steps(28);
+                }
             }
         }
     }
