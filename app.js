@@ -1,6 +1,10 @@
 // const hearts = document.querySelectorAll(".like");
 const quoteContainer = document.querySelector(".quote-container");
+const loader = document.querySelector("#loader")
 let quotesArray;
+let quotesInsideTheApp = []
+
+let isInitialLoad = true
 
 // hearts.forEach((heart) => {
 //     heart.addEventListener("click", () => {
@@ -10,6 +14,8 @@ let quotesArray;
 
 const updateDOM = () => {
     quotesArray.forEach((quote) => {
+        quotesInsideTheApp.push(quote)
+        isInitialLoad = false
         // quote card
         const card = document.createElement("div");
         card.classList.add("quote");
@@ -55,6 +61,12 @@ const updateDOM = () => {
         // console.log(quoteContainer)
         quoteContainer.appendChild(card)
         // ********************************************************
+
+
+        if(!isInitialLoad) {
+            loader.hidden = true
+        }
+
     });
 };
 

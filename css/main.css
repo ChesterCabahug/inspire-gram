@@ -72,6 +72,12 @@ header nav h1 {
   }
 }
 
+main .loader {
+  position: absolute;
+  top: 30vh;
+  left: 45vw;
+}
+
 main .quote {
   margin: 1rem;
   margin-left: 40vw;

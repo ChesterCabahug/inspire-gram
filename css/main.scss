@@ -76,6 +76,11 @@ header {
 }
 
 main {
+    .loader {
+        position: absolute;
+        top: 30vh;
+        left: 45vw;
+    }
     .quote {
         margin: 1rem;
         margin-left: 40vw;
