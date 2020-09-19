@@ -77,9 +77,26 @@ header {
 
 main {
     .loader {
-        position: absolute;
-        top: 30vh;
-        left: 45vw;
+        position: fixed;
+        top: 35vh;
+        left: 40vw;
+        bottom: 35vh;
+        right: 60vw;
+        display: flex;
+
+        @media (max-width: 750px) {
+            
+            left: 0;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            justify-content: center;
+        }
+
+        img {
+            align-self: center;
+            justify-self: center;
+        }
     }
     .quote {
         margin: 1rem;

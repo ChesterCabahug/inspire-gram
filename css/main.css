@@ -73,9 +73,34 @@ header nav h1 {
 }
 
 main .loader {
-  position: absolute;
-  top: 30vh;
-  left: 45vw;
+  position: fixed;
+  top: 35vh;
+  left: 40vw;
+  bottom: 35vh;
+  right: 60vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 750px) {
+  main .loader {
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+main .loader img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 main .quote {
