@@ -73,4 +73,13 @@ const getQuote = async () => {
     }
 };
 
+
+
+// check to see if scrolling near bottom of page, load more quotes
+window.addEventListener("scroll", (e) => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000) {
+        getQuote()
+    }
+})
+
 getQuote();
