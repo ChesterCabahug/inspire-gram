@@ -64,7 +64,7 @@ const updateDOM = () => {
 
 
         if(!isInitialLoad) {
-            loader.hidden = true
+            loader.classList.add("loader-isHidden")
         }
 
     });
@@ -79,7 +79,7 @@ const getQuote = async () => {
         quotesArray = await response.json();
         console.log(quotesArray[1].q);
         console.log(quotesArray[1].a);
-        // updateDOM()
+        updateDOM()
     } catch (error) {
         console.log(error);
     }
