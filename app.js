@@ -2,7 +2,7 @@
 const quoteContainer = document.querySelector(".quote-container");
 const loader = document.querySelector("#loader")
 let quotesArray;
-let quotesInsideTheApp = []
+let quoteVerifier = []
 
 let isInitialLoad = true
 
@@ -63,7 +63,8 @@ const createQuoteContainer = (quote) => {
 
 const updateDOM = () => {
     quotesArray.forEach((quote) => {
-        quotesInsideTheApp.push(quote)
+        quoteVerifier.push(quote)
+        quoteVerifier.map
         isInitialLoad = false
         
         createQuoteContainer(quote)
@@ -71,8 +72,17 @@ const updateDOM = () => {
         if(!isInitialLoad) {
             loader.classList.add("loader-isHidden")
         }
-
     });
+    // quotesArray.forEach((quote) => {
+    //     quoteVerifier.push(quote)
+    //     isInitialLoad = false
+        
+    //     createQuoteContainer(quote)
+
+    //     if(!isInitialLoad) {
+    //         loader.classList.add("loader-isHidden")
+    //     }
+    // });
 };
 
 // get quotes
@@ -82,8 +92,7 @@ const getQuote = async () => {
     try {
         const response = await fetch(proxyUrl + apiUrl);
         quotesArray = await response.json();
-        console.log(quotesArray[1].q);
-        console.log(quotesArray[1].a);
+
         updateDOM()
     } catch (error) {
         console.log(error);
