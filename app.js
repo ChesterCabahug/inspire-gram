@@ -62,19 +62,9 @@ const createQuoteContainer = (quote) => {
 }
 
 const updateDOM = () => {
-    quotesArray.forEach((quote) => {
-        quoteVerifier.push(quote)
-        quoteVerifier.map
-        isInitialLoad = false
-        
-        createQuoteContainer(quote)
-
-        if(!isInitialLoad) {
-            loader.classList.add("loader-isHidden")
-        }
-    });
     // quotesArray.forEach((quote) => {
     //     quoteVerifier.push(quote)
+    //     quoteVerifier.map
     //     isInitialLoad = false
         
     //     createQuoteContainer(quote)
@@ -83,6 +73,16 @@ const updateDOM = () => {
     //         loader.classList.add("loader-isHidden")
     //     }
     // });
+    quotesArray.forEach((quote) => {
+        quoteVerifier.push(quote)
+        isInitialLoad = false
+        
+        createQuoteContainer(quote)
+
+        if(!isInitialLoad) {
+            loader.classList.add("loader-isHidden")
+        }
+    });
 };
 
 // get quotes
